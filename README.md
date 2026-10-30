@@ -12,7 +12,8 @@ Prérequis : Python 3.14 et [Ollama](https://ollama.com).
 python -m venv .venv
 .\.venv\Scripts\python.exe -m pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
-ollama pull llama3.2
+ollama pull qwen2.5:7b
+New-Item -ItemType Directory -Force data
 Invoke-WebRequest https://arxiv.org/pdf/1706.03762 -OutFile "data\Attention is all you need.pdf"
 ```
 
@@ -31,7 +32,7 @@ python -m rag ask "À quelle figure correspond cette image ?" --image data\image
 
 La commande `ask` affiche le cycle de l'agent : `[ACTION]`, `[OBSERVATION]`, puis `[RÉPONSE]`, avec
 `[REASONING]` lorsque le LLM écrit un raisonnement avant son action.
-Pour changer de modèle : `$env:OLLAMA_MODEL = "qwen2.5:7b"`.
+Pour changer de modèle : `$env:OLLAMA_MODEL = "llama3.2"`.
 
 ## Architecture
 
@@ -72,26 +73,33 @@ choisir les améliorations : ces chiffres sont indicatifs, pas une mesure de gé
 | Image, visuel seul | 4/7 | 5/7 | non mesuré |
 | Image, visuel + légende | 6/7 | 7/7 | non mesuré |
 
-| Agent `llama3.2` | Contexte trouvé | Réponse correcte |
-|---|---|---|
-| Fait précis : nombre de têtes | non | non |
-| Valeur du dropout | oui | oui |
-| Score BLEU anglais-allemand | oui | non |
-| Figure de l'architecture | oui | oui |
-| Hybride : schéma et explication | oui | non |
-| Requête image | oui | oui |
-| Hors document : prix des GPU | oui | oui |
+| Agent | Contexte trouvé | `llama3.2` | `qwen2.5:7b` |
+|---|---|---|---|
+| Fait précis : nombre de têtes | non | non | non |
+| Valeur du dropout | oui | oui | oui |
+| Score BLEU anglais-allemand | oui | non | oui |
+| Figure de l'architecture | oui | oui | oui |
+| Hybride : schéma et explication | oui | non | oui |
+| Requête image | oui | oui | oui |
+| Hors document : prix des GPU | oui | oui | oui |
+| **Total** | | **4/7** | **6/7** |
+| Durée moyenne par question, sur CPU | | environ 60 s | environ 105 s |
 
-**Bilan : 4 réponses correctes sur 7.** Le détail et les traces sont dans
-[`outputs/validation_llama3_2.md`](outputs/validation_llama3_2.md). Une réponse ne compte comme correcte que
-si la bonne page a été récupérée.
+`qwen2.5:7b` est le modèle par défaut. Une réponse ne compte comme correcte que si la bonne page a été
+récupérée. Le cas du nombre de têtes échoue pour cette raison : les deux modèles répondent 8, mais le passage
+`h = 8` de la page 5 n'a pas été récupéré. Les traces sont dans
+[`outputs/validation_qwen2_5_7b.md`](outputs/validation_qwen2_5_7b.md) et
+[`outputs/validation_llama3_2.md`](outputs/validation_llama3_2.md).
 
 ## Limites
 
-- **Comportement de l'agent.** Avec `llama3.2`, l'agent décide bien d'appeler l'outil, mais une seule fois
-  par question : il ne reformule jamais sa recherche, donc la boucle ReAct ne dépasse pas un tour.
+- **Comportement de l'agent.** Avec les deux modèles, l'agent appelle l'outil une seule fois par question :
+  il ne reformule jamais sa recherche, donc la boucle ReAct ne dépasse pas un tour sur ces 7 cas.
 - **Fiabilité.** `llama3.2` confond des valeurs présentes dans le contexte : il donne 41,8 (anglais-français)
-  pour le score anglais-allemand, qui est 28,4. Ses réponses doivent être vérifiées.
+  pour le score anglais-allemand, qui est 28,4. `qwen2.5:7b` fait mieux, mais il cite parfois une mauvaise
+  page : les « douze heures » d'entraînement sont page 2, pas page 4. Les citations doivent être vérifiées.
+- **Requêtes en français.** `qwen2.5:7b` n'écrit pas toujours ses requêtes en anglais malgré la consigne,
+  ce qui peut réduire la qualité de la recherche.
 - **Pas de vision côté LLM.** Le LLM lit les légendes et les métadonnées, pas les pixels. La partie
   multimodale porte sur la recherche, pas sur l'analyse visuelle des figures.
 - **Figure 2.** Ses deux schémas partagent une seule légende, donc la recherche les distingue mal.
