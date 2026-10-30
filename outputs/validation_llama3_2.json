@@ -1,0 +1,606 @@
+{
+  "model": "llama3.2",
+  "text_clip": [
+    {
+      "query": "number of parallel attention layers h = 8 heads",
+      "expected_page": 5,
+      "pages": [
+        15,
+        3,
+        6,
+        6,
+        7
+      ],
+      "hit1": false,
+      "hit3": false,
+      "hit5": false
+    },
+    {
+      "query": "How many attention heads are used in the base model",
+      "expected_page": 5,
+      "pages": [
+        15,
+        2,
+        7,
+        3,
+        14
+      ],
+      "hit1": false,
+      "hit3": false,
+      "hit5": false
+    },
+    {
+      "query": "dropout rate Pdrop 0.1",
+      "expected_page": 8,
+      "pages": [
+        9,
+        8,
+        8,
+        9,
+        8
+      ],
+      "hit1": false,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "query": "label smoothing value",
+      "expected_page": 8,
+      "pages": [
+        9,
+        8,
+        9,
+        2,
+        3
+      ],
+      "hit1": false,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "query": "learning rate schedule warmup steps",
+      "expected_page": 7,
+      "pages": [
+        7,
+        7,
+        7,
+        2,
+        7
+      ],
+      "hit1": true,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "query": "positional encoding sine and cosine functions",
+      "expected_page": 6,
+      "pages": [
+        6,
+        6,
+        6,
+        3,
+        2
+      ],
+      "hit1": true,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "query": "BLEU score on English to German translation",
+      "expected_page": 8,
+      "pages": [
+        1,
+        8,
+        8,
+        8,
+        8
+      ],
+      "hit1": false,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "query": "number of encoder and decoder layers N = 6",
+      "expected_page": 3,
+      "pages": [
+        3,
+        3,
+        5,
+        5,
+        3
+      ],
+      "hit1": true,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "query": "dimension of the model output d_model = 512",
+      "expected_page": 3,
+      "pages": [
+        3,
+        8,
+        4,
+        6,
+        8
+      ],
+      "hit1": true,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "query": "number of GPUs used for training",
+      "expected_page": 7,
+      "pages": [
+        8,
+        2,
+        8,
+        7,
+        8
+      ],
+      "hit1": false,
+      "hit3": false,
+      "hit5": true
+    }
+  ],
+  "text_hybrid": [
+    {
+      "query": "number of parallel attention layers h = 8 heads",
+      "expected_page": 5,
+      "pages": [
+        15,
+        5,
+        3,
+        6,
+        4
+      ],
+      "hit1": false,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "query": "How many attention heads are used in the base model",
+      "expected_page": 5,
+      "pages": [
+        15,
+        14,
+        9,
+        9,
+        13
+      ],
+      "hit1": false,
+      "hit3": false,
+      "hit5": false
+    },
+    {
+      "query": "dropout rate Pdrop 0.1",
+      "expected_page": 8,
+      "pages": [
+        8,
+        8,
+        8,
+        9,
+        7
+      ],
+      "hit1": true,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "query": "label smoothing value",
+      "expected_page": 8,
+      "pages": [
+        8,
+        8,
+        3,
+        9,
+        4
+      ],
+      "hit1": true,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "query": "learning rate schedule warmup steps",
+      "expected_page": 7,
+      "pages": [
+        7,
+        7,
+        7,
+        7,
+        9
+      ],
+      "hit1": true,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "query": "positional encoding sine and cosine functions",
+      "expected_page": 6,
+      "pages": [
+        6,
+        6,
+        6,
+        6,
+        1
+      ],
+      "hit1": true,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "query": "BLEU score on English to German translation",
+      "expected_page": 8,
+      "pages": [
+        1,
+        8,
+        8,
+        8,
+        8
+      ],
+      "hit1": false,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "query": "number of encoder and decoder layers N = 6",
+      "expected_page": 3,
+      "pages": [
+        3,
+        3,
+        5,
+        3,
+        3
+      ],
+      "hit1": true,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "query": "dimension of the model output d_model = 512",
+      "expected_page": 3,
+      "pages": [
+        3,
+        5,
+        6,
+        8,
+        5
+      ],
+      "hit1": true,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "query": "number of GPUs used for training",
+      "expected_page": 7,
+      "pages": [
+        8,
+        8,
+        1,
+        7,
+        2
+      ],
+      "hit1": false,
+      "hit3": false,
+      "hit5": true
+    }
+  ],
+  "images_visual": [
+    {
+      "query": "Transformer model architecture diagram with encoder and decoder stacks",
+      "expected_figure": 1,
+      "figures": [
+        1,
+        2,
+        2
+      ],
+      "hit1": true,
+      "hit3": true
+    },
+    {
+      "query": "diagram of scaled dot-product attention",
+      "expected_figure": 2,
+      "figures": [
+        2,
+        3,
+        2
+      ],
+      "hit1": true,
+      "hit3": true
+    },
+    {
+      "query": "multi-head attention diagram with parallel layers",
+      "expected_figure": 2,
+      "figures": [
+        2,
+        2,
+        1
+      ],
+      "hit1": true,
+      "hit3": true
+    },
+    {
+      "query": "attention visualization between words of a sentence",
+      "expected_figure": 3,
+      "figures": [
+        3,
+        4,
+        5
+      ],
+      "hit1": true,
+      "hit3": true
+    },
+    {
+      "query": "anaphora resolution attention heads",
+      "expected_figure": 4,
+      "figures": [
+        3,
+        1,
+        4
+      ],
+      "hit1": false,
+      "hit3": true
+    },
+    {
+      "query": "attention heads related to the structure of the sentence",
+      "expected_figure": 5,
+      "figures": [
+        3,
+        1,
+        2
+      ],
+      "hit1": false,
+      "hit3": false
+    },
+    {
+      "query": "long-distance dependencies in encoder self-attention",
+      "expected_figure": 3,
+      "figures": [
+        1,
+        5,
+        2
+      ],
+      "hit1": false,
+      "hit3": false
+    }
+  ],
+  "images_hybrid": [
+    {
+      "query": "Transformer model architecture diagram with encoder and decoder stacks",
+      "expected_figure": 1,
+      "figures": [
+        1,
+        5,
+        2
+      ],
+      "hit1": true,
+      "hit3": true
+    },
+    {
+      "query": "diagram of scaled dot-product attention",
+      "expected_figure": 2,
+      "figures": [
+        2,
+        2,
+        1
+      ],
+      "hit1": true,
+      "hit3": true
+    },
+    {
+      "query": "multi-head attention diagram with parallel layers",
+      "expected_figure": 2,
+      "figures": [
+        2,
+        2,
+        1
+      ],
+      "hit1": true,
+      "hit3": true
+    },
+    {
+      "query": "attention visualization between words of a sentence",
+      "expected_figure": 3,
+      "figures": [
+        3,
+        5,
+        4
+      ],
+      "hit1": true,
+      "hit3": true
+    },
+    {
+      "query": "anaphora resolution attention heads",
+      "expected_figure": 4,
+      "figures": [
+        4,
+        5,
+        3
+      ],
+      "hit1": true,
+      "hit3": true
+    },
+    {
+      "query": "attention heads related to the structure of the sentence",
+      "expected_figure": 5,
+      "figures": [
+        5,
+        4,
+        3
+      ],
+      "hit1": true,
+      "hit3": true
+    },
+    {
+      "query": "long-distance dependencies in encoder self-attention",
+      "expected_figure": 3,
+      "figures": [
+        5,
+        3,
+        1
+      ],
+      "hit1": false,
+      "hit3": true
+    }
+  ],
+  "agent": [
+    {
+      "id": "texte-fait",
+      "question": "Combien de têtes d'attention utilise le modèle de base ?",
+      "image": null,
+      "tool_calls": 1,
+      "actions": [
+        {
+          "query": "number of attention heads in base model",
+          "image_path": ""
+        }
+      ],
+      "pages_retrieved": [
+        9,
+        13,
+        14,
+        15
+      ],
+      "context_found": false,
+      "answer": "Le modèle de base utilise 8 têtes d'attention.",
+      "correct": false,
+      "error": null,
+      "seconds": 66.4
+    },
+    {
+      "id": "texte-regularisation",
+      "question": "Quelle valeur de dropout est utilisée pendant l'entraînement ?",
+      "image": null,
+      "tool_calls": 1,
+      "actions": [
+        {
+          "query": "dropout value used during training",
+          "image_path": ""
+        }
+      ],
+      "pages_retrieved": [
+        3,
+        7,
+        8,
+        15
+      ],
+      "context_found": true,
+      "answer": "Le dropout utilisé pendant l'entraînement est de 0.1.",
+      "correct": true,
+      "error": null,
+      "seconds": 33.7
+    },
+    {
+      "id": "texte-resultat",
+      "question": "Quel score BLEU le Transformer obtient-il en traduction anglais-allemand ?",
+      "image": null,
+      "tool_calls": 1,
+      "actions": [
+        {
+          "query": "Transformer BLEU score English-German translation"
+        }
+      ],
+      "pages_retrieved": [
+        1,
+        3,
+        8,
+        15
+      ],
+      "context_found": true,
+      "answer": "Le Transformer obtient un score BLEU de 41,8 sur la tâche de traduction anglais-allemand, ce qui établit un nouveau record de score BLEU pour la tâche de traduction anglais-allemand. C'est une amélioration significative par rapport aux résultats précédents, qui étaient de 28,4 BLEU.",
+      "correct": false,
+      "error": null,
+      "seconds": 48.8
+    },
+    {
+      "id": "figure",
+      "question": "Quelle figure montre l'architecture complète du Transformer, et à quelle page ?",
+      "image": null,
+      "tool_calls": 1,
+      "actions": [
+        {
+          "query": "Transformer architecture figure page",
+          "image_path": ""
+        }
+      ],
+      "pages_retrieved": [
+        2,
+        3,
+        4,
+        8,
+        10
+      ],
+      "context_found": true,
+      "answer": "La figure qui montre l'architecture complète du Transformer est Figure 1, page 3.",
+      "correct": true,
+      "error": null,
+      "seconds": 37.7
+    },
+    {
+      "id": "hybride-texte-image",
+      "question": "Trouve le schéma de la multi-head attention, puis explique à partir du texte pourquoi l'article utilise plusieurs têtes.",
+      "image": null,
+      "tool_calls": 1,
+      "actions": [
+        {
+          "query": "multi-head attention schema",
+          "image_path": ""
+        }
+      ],
+      "pages_retrieved": [
+        1,
+        4,
+        5,
+        14
+      ],
+      "context_found": true,
+      "answer": "D'après le texte, l'article utilise plusieurs \"têtes\" (ou \"heads\") dans la multi-head attention pour permettre au modèle de jointly attendre à différentes positions et à différentes représentations subspatiales. Cela permet de capturer des relations entre les éléments de l'entrée et de les utiliser pour faire des prédictions.\n\nEn effet, le texte indique que \"Multi-Head(Q, K, V ) = Concat(head1, ..., headn)\", où n est le nombre de têtes. Cela signifie que le modèle utilise plusieurs poids pour chaque entrée, ce qui permet de capturer des relations plus complexes.\n\nDe plus, le texte mentionne que \"Multi-Head(Q, K, V ) = Concat(head1, ..., headn)\" permet de réduire la dimensionnalité de l'entrée, ce qui peut aider à éviter les problèmes de surdimensionnalité.\n\nEn résumé, les têtes de la multi-head attention permettent au modèle de mieux capturer les relations entre les éléments de l'entrée et de les utiliser pour faire des prédictions plus précises.",
+      "correct": false,
+      "error": null,
+      "seconds": 94.1
+    },
+    {
+      "id": "requete-image",
+      "question": "À quelle figure de l'article correspond cette image, et quel mécanisme décrit-elle ?",
+      "image": "data/images/page04_xref183.png",
+      "tool_calls": 1,
+      "actions": [
+        {
+          "image_path": "data/images/page04_xref183.png",
+          "query": "Figure of the article corresponding to the image and mechanism described"
+        }
+      ],
+      "pages_retrieved": [
+        3,
+        4
+      ],
+      "context_found": true,
+      "answer": "La figure correspondant à l'image fournie est la Figure 2, qui décrit le mécanisme de Scaled Dot-Product Attention. Ce mécanisme consiste à prendre en compte les valeurs de manière à attribuer un poids à chaque valeur en fonction de la compatibilité entre la requête et la clé correspondante. La figure montre également la mise en œuvre de Multi-Head Attention, qui consiste en plusieurs couches d'attention qui s'exécutent en parallèle.",
+      "correct": true,
+      "error": null,
+      "seconds": 69.1
+    },
+    {
+      "id": "hors-document",
+      "question": "Quel était le prix des GPU utilisés pour l'entraînement ?",
+      "image": null,
+      "tool_calls": 1,
+      "actions": [
+        {
+          "query": "GPU cost training Transformer"
+        }
+      ],
+      "pages_retrieved": [
+        1,
+        3,
+        4,
+        8,
+        10
+      ],
+      "context_found": true,
+      "answer": "Le coût du GPU utilisé pour l'entraînement n'est pas explicitement mentionné dans les observations fournies. Les observations parlent du coût de l'entraînement en général, mais pas du coût spécifique des GPU utilisés. \n\nLa paper ne donne pas d'information sur le prix des GPU utilisés pour l'entraînement.",
+      "correct": true,
+      "error": null,
+      "seconds": 67.7
+    }
+  ]
+}

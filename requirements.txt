@@ -1,0 +1,13 @@
+torch
+torchvision
+open_clip_torch
+chromadb
+pymupdf
+pillow
+numpy
+rank_bm25
+pydantic
+langchain-core
+langchain-ollama
+langgraph
+pytest

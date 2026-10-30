@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.pdf
+data/images/
+data/chroma/
+outputs/search_*.html
